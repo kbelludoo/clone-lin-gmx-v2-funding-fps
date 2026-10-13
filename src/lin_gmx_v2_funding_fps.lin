@@ -1,0 +1,15 @@
+@LIN:L1c:0.2
+@GMX_V2_FUNDING_FPS{
+  version=1
+  repo="gmx-io/gmx-synthetics"
+  source="contracts/market/MarketUtils.sol getNextFundingFactorPerSecond"
+  bound="contracts/utils/Calc.sol boundMagnitude"
+  precision="contracts/utils/Precision.sol applyFactor toFactor"
+  license="GPL-2.0-or-later"
+  license_note="BUSL-1.1 Change Date 2026-08-31 elapsed; Change License GPL-2.0-or-later"
+  commit="a85ea3491c19c93bb4b5a002d9b358fb769b7849"
+  profile="LINVM-1"
+  class="EXPERIMENTAL"
+  purpose="uint64_scale_gmx_v2_adaptive_funding_factor_per_second_vs_min_bound_saved"
+  note="Not mainnet uint256. Not FLOAT=1e30. FLOAT prime=1e6. Exponent/pow is identity skip. DataStore params are arguments. nextFundingFactorPerSecond is bound by min; nextSavedFundingFactorPerSecond is not. Decrease uses raw decFps*duration not applyFactor. Decrease past magnitude becomes +/-1 not 0. Distinct from V1 getNextFundingRate and from getNextFundingAmountPerSize."
+}
